@@ -207,9 +207,6 @@ img {
 }
 
 
-
-
-
 .modal-content {
     background-color: #fff;
     padding: 30px;
@@ -280,6 +277,10 @@ img {
     background-color: #2980b9;
 }
 
+#download-btn{
+    margin-top: 60px;
+}
+
 /* Dark mode adjustments */
 body.dark-mode {
     background-color: #121212;
@@ -292,6 +293,11 @@ body.dark-mode .modal-content {
 }
 
 body.dark-mode .close {
+    color: white;
+}
+
+body.dark-mode .custom-file-upload {
+    background-color: #444;
     color: white;
 }
 
@@ -323,7 +329,7 @@ body.dark-mode .suggestion-item:hover {
 }
 
 /* Responsive styles */
-@media (max-width: 600px) {
+@media (max-width: 750px) {
 
     #selected-movies {
         display: block; /* Change to block for list-style display */
