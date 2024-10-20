@@ -8,16 +8,16 @@ body {
     text-align: center; /* Center text globally */
 }
 
-.App {
+#app {
     margin: 0 auto; /* Center the app container */
     max-width: 600px; /* Limit the max width for better alignment */
 }
 
 /* Dark mode toggle button */
 #toggle-dark-mode {
-    position: fixed; /* Change from absolute to fixed */
-    top: 20px;
-    right: 20px; /* Position it at the top right corner */
+    margin-bottom: 10px; /* Add margin to separate from search input */
+    display: block; /* Change from fixed to block for stacking */
+    width: 150px; /* Make it full width */
 }
 
 .dark-mode-toggle {
@@ -62,7 +62,8 @@ button {
     border: none;
     font-size: 16px;
     transition: background-color 0.3s;
-    display: inline-block; /* Center buttons */
+    display: block; /* Change to block to stack buttons */
+    width: 150px;
 }
 
 button:hover {
@@ -75,7 +76,7 @@ button:hover {
 }
 
 .custom-file-upload {
-    display: inline-block;
+    display: block; /* Change to block for stacking */
     padding: 10px 20px;
     margin: 10px auto; /* Center button */
     cursor: pointer;
@@ -85,6 +86,7 @@ button:hover {
     font-size: 16px;
     text-align: center;
     transition: background-color 0.3s;
+    width: 115px;
 }
 
 .custom-file-upload:hover {
@@ -180,14 +182,33 @@ img {
     display: none;
     position: fixed;
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
+    left: 50%; /* Move to the center of the viewport */
+    top: 50%; /* Move to the center of the viewport */
+    width: 90%; /* 90% of the viewport width */
+    max-width: 600px; /* Optional: limit max width */
+    height: auto; /* Allow height to be auto based on content */
+    transform: translate(-50%, -50%); /* Center the modal */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay background */
 }
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff; /* White background for modal content */
+    padding: 30px;
+    border-radius: 20px; /* Rounded corners */
+    text-align: left;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Add some depth */
+}
+
+/* Optional: Add a border radius to the modal itself for consistency */
+.modal {
+    border-radius: 20px; /* Optional rounded corners for modal */
+    overflow: hidden; /* Ensure corners are clean */
+}
+
+
+
+
 
 .modal-content {
     background-color: #fff;
@@ -223,12 +244,12 @@ img {
 /* Styling for different text sections in modal */
 .modal-content p span {
     font-weight: bold;
-    color: #2980b9; /* blue */
+    color: #424b52; /* blue */
 }
 
 .modal-content p span.italic {
     font-style: italic;
-    color: #8e44ad; /* purple */
+    color: #009fcf; /* purple */
 }
 
 .modal-content p span.highlight {
@@ -237,7 +258,7 @@ img {
 }
 
 .modal-content p span.subtle {
-    color: #95a5a6; /* grey for less important text */
+    color: #c57104; /* grey for less important text */
 }
 
 /* Centered watched button */
@@ -252,6 +273,7 @@ img {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    width: 200px;
 }
 
 .modal-content button:hover {
@@ -298,4 +320,18 @@ body.dark-mode #suggestions {
 
 body.dark-mode .suggestion-item:hover {
     background-color: #555; /* Darker on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+
+    #selected-movies {
+        display: block; /* Change to block for list-style display */
+        margin-top: 20px; /* Space above the selected movies section */
+    }
+
+    .movie {
+        width: 50%; /* Set the movie tiles width to 65% */
+        margin: 10px auto; /* Center movies */
+    }
 }
