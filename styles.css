@@ -329,7 +329,7 @@ body.dark-mode .suggestion-item:hover {
 }
 
 /* Responsive styles */
-@media (max-width: 750px) {
+@media (max-width: 800px) {
 
     #selected-movies {
         display: block; /* Change to block for list-style display */

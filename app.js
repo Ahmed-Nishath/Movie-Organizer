@@ -1,18 +1,24 @@
 const apiKey = '2388d83c5310e9d91ca1291bde91f2e4'; // Replace with your actual TMDB API key
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadMoviesFromLocalStorage();
+    promptForFile(); // Prompt for file on load
 
     document.getElementById('search-input').addEventListener('input', searchMovies);
     document.getElementById('close-modal').addEventListener('click', closeModal);
     document.getElementById('toggle-dark-mode').addEventListener('click', toggleDarkMode);
     document.getElementById('download-btn').addEventListener('click', downloadMovieList);
-    
-    // Add event listener for file input change
-    document.getElementById('file-input').addEventListener('change', loadMovieListFromFile);
 });
 
 let selectedMovies = [];
+
+// Prompt for file input
+const promptForFile = () => {
+    const fileInput = document.getElementById('file-input');
+    fileInput.click(); // Programmatically click the file input to open the file dialog
+
+    // Add event listener for file input change
+    fileInput.addEventListener('change', loadMovieListFromFile);
+};
 
 const searchMovies = async () => {
     const query = document.getElementById('search-input').value;
