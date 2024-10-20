@@ -1,0 +1,301 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center; /* Center text globally */
+}
+
+.App {
+    margin: 0 auto; /* Center the app container */
+    max-width: 600px; /* Limit the max width for better alignment */
+}
+
+/* Dark mode toggle button */
+#toggle-dark-mode {
+    position: fixed; /* Change from absolute to fixed */
+    top: 20px;
+    right: 20px; /* Position it at the top right corner */
+}
+
+.dark-mode-toggle {
+    padding: 10px 15px;
+    border-radius: 25px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #2980b9;
+}
+
+/* Search bar styling */
+#search-input {
+    padding: 12px 20px;
+    margin: 10px auto; /* Center the input */
+    width: 100%;
+    max-width: 400px;
+    border-radius: 25px; /* Rounded corners */
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+#search-input:focus {
+    border-color: #3498db; /* Blue border on focus */
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    margin: 10px auto; /* Center buttons */
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: inline-block; /* Center buttons */
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Custom File Input Styles */
+#file-input {
+    display: none; /* Hide the actual input */
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px auto; /* Center button */
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+    background-color: #2980b9;
+}
+
+/* Results and selected movies */
+#selected-movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Spacing between movie cards */
+    margin-top: 20px; /* Space above the selected movies section */
+}
+
+.movie {
+    margin: 10px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    background-color: white;
+    width: 150px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.movie:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px; /* Rounded movie poster */
+}
+
+.movie h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 10px 0 5px;
+}
+
+.movie p {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Suggestions dropdown */
+#suggestions {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    max-height: 320px; /* Show up to 4 items */
+    overflow-y: auto;
+    width: 100%;
+    max-width: 400px;
+    left: 50%; /* Position the dropdown in the center */
+    transform: translateX(-50%); /* Center it horizontally */
+    margin-top: 5px; /* Space above the dropdown */
+    z-index: 1000;
+    border-radius: 15px; /* Rounded dropdown */
+}
+
+/* Removing the horizontal line */
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;  
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestion-item img {
+    width: 50px;
+    height: 75px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.suggestion-item span {
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* Modal (Movie Details) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px; /* Rounded corners */
+    max-width: 600px;
+    width: 90%; /* Responsive width */
+    text-align: left;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Add some depth */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.modal-content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Styling for different text sections in modal */
+.modal-content p span {
+    font-weight: bold;
+    color: #2980b9; /* blue */
+}
+
+.modal-content p span.italic {
+    font-style: italic;
+    color: #8e44ad; /* purple */
+}
+
+.modal-content p span.highlight {
+    font-weight: bold;
+    color: #e74c3c; /* red for emphasis */
+}
+
+.modal-content p span.subtle {
+    color: #95a5a6; /* grey for less important text */
+}
+
+/* Centered watched button */
+.modal-content button {
+    display: block; /* Block element to control positioning */
+    margin: 20px auto; /* Center horizontally with auto */
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #2980b9;
+}
+
+/* Dark mode adjustments */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .modal-content {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .close {
+    color: white;
+}
+
+body.dark-mode .modal-content h2 {
+    color: #ecf0f1; /* Light color for headings in dark mode */
+}
+
+body.dark-mode button {
+    background-color: #444;
+}
+
+body.dark-mode button:hover {
+    background-color: #555;
+}
+
+body.dark-mode #search-input {
+    background-color: #444;
+    color: white;
+    border-color: #666; /* Lighter border */
+}
+
+body.dark-mode #suggestions {
+    background-color: #333;
+    color: white; /* Change text color */
+}
+
+body.dark-mode .suggestion-item:hover {
+    background-color: #555; /* Darker on hover */
+}
